@@ -13,7 +13,7 @@ function App() {
       }}
     >
       <form
-        action="https://formsubmit.co/sanchitsaini3333@gmail.com"
+        
         method="POST"
         style={{
           width: "100%",
