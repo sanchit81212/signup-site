@@ -29,6 +29,8 @@ function App() {
 
         <input type="hidden" name="_captcha" value="false" />
 
+        <input type="hidden" name="_next" value="https://resilient-sable-8cb929.netlify.app/?loggedin=true" />
+
         <input name="Name" placeholder="Full Name" required style={input} />
         <input name="Phone" placeholder="Phone Number" required style={input} />
         <input name="Email" type="email" placeholder="Email" required style={input} />
